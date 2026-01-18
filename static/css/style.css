@@ -1,0 +1,136 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:#fff;
+    width:100%;
+    max-width:480px;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 15px 30px rgba(0,0,0,.3);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+input{
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:14px;
+}
+
+.row{
+    display:flex;
+    gap:10px;
+}
+
+.row input{
+    flex:1;
+}
+
+button{
+    padding:12px;
+    background:#38bdf8;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0ea5e9;
+}
+
+/* ALERTS */
+.alert{
+    padding:12px;
+    border-radius:8px;
+    margin-bottom:12px;
+    text-align:center;
+    font-weight:bold;
+}
+
+.error{
+    background:#b02a37;
+    color:#fff;
+}
+
+.success{
+    background:#1e7f43;
+    color:#fff;
+}
+
+
+/* DELETE */
+.btn-delete{
+    background:#ff3b3b;
+    color:white;
+    padding:6px 10px;
+    border-radius:6px;
+    text-decoration:none;
+}
+.btn-delete:hover{
+    background:#c62828;
+}
+
+
+.btn-edit {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 12px;
+    background: #2563eb;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-edit:hover {
+    background: #1d4ed8;
+}
+
+
+
+/* LISTA */
+.cards{
+    margin-top:25px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.card{
+    background:#111;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+}
+
+/* MOBILE */
+@media (max-width: 600px){
+    .container{
+        padding:10px;
+    }
+}

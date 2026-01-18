@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Editar Agendamento</h1>
+
+    <form method="POST">
+
+        <input type="text" name="name" value="{{ a.name }}" required>
+
+        <input type="text" name="service" value="{{ a.service }}" required>
+
+        <div class="row">
+            <input type="date" name="date" value="{{ a.date }}" required>
+            <input type="time" name="time" value="{{ a.time }}" required>
+        </div>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <br>
+    <a href="/" class="btn-delete">Cancelar</a>
+</div>
+
+</body>
+</html>

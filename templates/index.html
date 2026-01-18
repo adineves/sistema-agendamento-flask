@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salão Bot</title>
+
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+
+        <h1>Agendamentos</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, msg in messages %}
+                <div class="alert {{ category }}">
+                        {{ msg }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST">
+            <input type="text" name="name" placeholder="Nome" required>
+
+            <input type="text" name="service" placeholder="Serviço" required>
+            
+            <div class="row">
+                <input type="date" name="date" required>
+                <input type="time" name="time" required>
+            </div>
+
+            <button type="submit">Agendar</button>
+        </form>
+
+        <hr>
+        <div class="cards">
+            {% for a in appointments%}
+                <div class="card">
+                    <strong>{{ a.name }}</strong> <br>
+                    {{ a.service }} <br>
+                    {{ a.date }} às {{ a.time }}
+
+                    <br><br>
+                    <a href="/delete/{{ a.id }}" class="btn-delete" onclick="return confirm('Deseja realmente excluir este agendamento?')">Excluir</a>
+
+                    <a href="/edit/{{ a.id }}" class="btn-edit">Editar</a>
+                    
+                </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</body>
+</html>
